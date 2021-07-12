@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'jquery-rails'
-gem 'slim'
+gem 'slim-rails'
 gem 'pry'
 gem 'pry-byebug'
 
