@@ -1,0 +1,28 @@
+h1 Hello, #{@user.name}
+
+h2 How Are You Feeling Today?
+
+= form_for :mood do |f|
+  .form-group
+    = f.radio_button :name, "Happy"
+    = f.label :name, "Happy"
+  .form-group
+    = f.radio_button :name, "Sad"
+    = f.label :name, "Sad"
+  .form-group
+    = f.radio_button :name, "Bored"
+    = f.label :name, "Bored"
+  .form-group
+    = f.radio_button :name, "Angry"
+    = f.label :name, "Angry"
+  .form-group
+    = f.radio_button :name, "Hungry"
+    = f.label :name, "Hungry"
+  .form-group
+    = f.submit "Submit", id: "mood-submit-btn"
+
+p You have a #{@user.current_streak}-day streak going of tracking your mood.
+p
+  = "Your longest streak is #{@user.longest_streak} days. "
+  - if (streak_percentile = @user.longest_streak_percentile) > 50
+    | This falls in the #{streak_percentile.ordinalize} percentile of users.
